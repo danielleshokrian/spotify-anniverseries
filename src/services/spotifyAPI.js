@@ -111,10 +111,7 @@ export async function getArtistAlbums(artistId) {
       const normalizedName = album.name.toLowerCase();
       if (!albumNames.has(normalizedName)) {
         albumNames.add(normalizedName);
-        uniqueAlbums.push({
-          ...album,
-          label: album.label || 'Unknown Label'
-        });
+        uniqueAlbums.push(album);
       }
     }
 

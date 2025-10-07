@@ -28,9 +28,6 @@ export default function AlbumCard({ album }) {
         <p className="text-sm text-gray-400 mb-1 font-mono">
           {new Date(album.release_date).getFullYear()}
         </p>
-        {album.label && (
-          <p className="text-xs text-cyan-400 mb-2">{album.label}</p>
-        )}
         {album.anniversaryYears && (
           <div className="mt-3 pt-3 border-t border-gray-800">
             <span className="inline-flex items-center gap-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
