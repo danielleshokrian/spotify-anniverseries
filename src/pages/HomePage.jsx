@@ -43,7 +43,7 @@ export default function HomePage() {
         
         <h1 className="text-7xl font-bold text-white mb-4 tracking-tight">
           <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent drop-shadow-lg">
-            VINYL
+            Spotify Albums
           </span>
           <br />
           <span className="text-white text-5xl">Anniversary Finder</span>
