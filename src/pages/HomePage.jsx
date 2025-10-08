@@ -36,7 +36,7 @@ export default function HomePage() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-full blur-xl opacity-50 animate-pulse"></div>
             <div className="relative bg-black border-4 border-pink-500 p-6 rounded-full shadow-2xl">
-              <Disc className="w-16 h-16 text-pink-500 animate-spin" style={{animationDuration: '3s'}} />
+              <Disc className="w-16 h-16 text-pink-500 animate-spin" />
             </div>
           </div>
         </div>
