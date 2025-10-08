@@ -175,14 +175,15 @@ This project includes a comprehensive test suite using Vitest and React Testing 
 
 ### Running Tests
 ```bash
-** Run all tests once
+# Run all tests once
 npm test
 
-** Run tests in watch mode (auto-rerun on file changes)
+# Run tests in watch mode (auto-rerun on file changes)
 npm test -- --watch
 
-** Run tests with coverage report
+# Run tests with coverage report
 npm test -- --coverage
+```
 
 
 ## Current Limitations:
