@@ -6,7 +6,10 @@ export default function SearchBar({ onSearch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSearch(query);
+
+    if (query.trim()) {
+      onSearch(query);
+    }
   };
 
   return (
