@@ -169,9 +169,23 @@ The app uses **Client Credentials Flow** for server-to-server authentication:
 - Increment: 10 years
 - Results: Find albums celebrating major milestones
 
-## Known Issues & Limitations
+## Testing
 
-### Current Limitations:
+This project includes a comprehensive test suite using Vitest and React Testing Library.
+
+### Running Tests
+```bash
+** Run all tests once
+npm test
+
+** Run tests in watch mode (auto-rerun on file changes)
+npm test -- --watch
+
+** Run tests with coverage report
+npm test -- --coverage
+
+
+## Current Limitations:
 
 1. **Rate Limiting**: Spotify API has rate limits
    - Basic tier: ~180 requests per minute
