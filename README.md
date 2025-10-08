@@ -133,43 +133,6 @@ The app uses **Client Credentials Flow** for server-to-server authentication:
 - Tokens auto-refresh when expired (1-hour lifetime)
 - No user login required
 
-## Project Structure
-
-```
-spotify-anniverseries/
-├── .env                          # Environment variables (not committed)
-├── .gitignore                    # Git ignore rules
-├── README.md                     # Project documentation
-├── package.json                  # Dependencies and scripts
-├── vite.config.js               # Vite configuration
-├── tailwind.config.js           # Tailwind CSS configuration
-├── postcss.config.js            # PostCSS configuration
-├── index.html                   # HTML entry point
-├── node_modules/                # Dependencies
-└── src/
-    ├── main.jsx                 # React entry point
-    ├── App.jsx                  # Router configuration
-    ├── index.css                # Global styles & Tailwind imports
-    ├── components/              # Shared components
-    │   ├── Layout.jsx          # Main layout wrapper
-    │   ├── Navbar.jsx          # Navigation bar
-    │   └── Navbar.css          # Navbar custom styles
-    ├── pages/                   # Page components
-    │   ├── HomePage.jsx        # Search/home page
-    │   ├── ArtistPage.jsx      # Artist details page
-    │   └── components/         # Page-specific components
-    │       ├── SearchBar.jsx           # Search input
-    │       ├── ArtistCard.jsx          # Artist result card
-    │       ├── ArtistHeader.jsx        # Artist info header
-    │       ├── AnniversaryFilter.jsx   # Filter controls
-    │       ├── AlbumGrid.jsx           # Album grid layout
-    │       ├── AlbumCard.jsx           # Individual album card
-    │       ├── EmptyState.jsx          # No results message
-    │       └── LoadingSpinner.jsx      # Loading state
-    └── services/
-        └── spotifyApi.js        # Spotify API integration
-```
-
 ## Usage
 
 ### Searching for an Artist
