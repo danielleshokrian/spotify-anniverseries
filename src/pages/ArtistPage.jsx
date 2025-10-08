@@ -13,9 +13,8 @@ export default function ArtistPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  // Filter State
   const [filterEnabled, setFilterEnabled] = useState(false);
-  const [targetYear, setTargetYear] = useState(new Date().getFullYear() + 1);
+  const [targetYear, setTargetYear] = useState(new Date().getFullYear());
   const [increment, setIncrement] = useState(5);
 
   useEffect(() => {

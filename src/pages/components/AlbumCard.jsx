@@ -4,7 +4,7 @@ import { Calendar, Disc } from 'lucide-react';
 export default function AlbumCard({ album }) {
   return (
     <div className="group bg-black border-2 border-gray-800 hover:border-pink-500 rounded-xl overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-pink-500/30 hover:scale-105">
-      {/* Vinyl record style album art */}
+
       <div className="relative aspect-square bg-gradient-to-br from-gray-900 to-black flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-cyan-500/10 group-hover:opacity-100 opacity-0 transition-opacity"></div>
         {album.images && album.images.length > 0 ? (
@@ -17,7 +17,6 @@ export default function AlbumCard({ album }) {
           <Disc className="w-16 h-16 text-pink-500 animate-spin" style={{animationDuration: '3s'}} />
         )}
         
-        {/* Vinyl shine effect */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
       </div>
       

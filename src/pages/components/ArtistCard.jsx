@@ -10,7 +10,7 @@ export default function ArtistCard({ artist }) {
       onClick={() => navigate(`/artist/${artist.id}`)}
       className="group bg-gradient-to-r from-gray-900 to-black border-2 border-pink-500/30 hover:border-cyan-500 rounded-xl p-6 flex items-center gap-6 cursor-pointer transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-pink-500/30 hover:scale-[1.02]"
     >
-      {/* Vinyl record style avatar */}
+      
       <div className="relative w-24 h-24 rounded-full flex-shrink-0">
         <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-full blur group-hover:blur-md transition-all"></div>
         <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-black bg-gray-900 flex items-center justify-center">

@@ -5,9 +5,7 @@ const CLIENT_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 let accessToken = null;
 let tokenExpiry = null;
 
-// Get Access Token using Client Credentials Flow
 async function getAccessToken() {
-  // Return cached token if still valid
   if (accessToken && tokenExpiry && Date.now() < tokenExpiry) {
     return accessToken;
   }
@@ -32,7 +30,6 @@ async function getAccessToken() {
   return accessToken;
 }
 
-// Search for artists
 export async function searchArtists(query) {
   try {
     const token = await getAccessToken();
@@ -58,7 +55,6 @@ export async function searchArtists(query) {
   }
 }
 
-// Get artist details
 export async function getArtist(artistId) {
   try {
     const token = await getAccessToken();
@@ -83,7 +79,6 @@ export async function getArtist(artistId) {
   }
 }
 
-// Get artist albums
 export async function getArtistAlbums(artistId) {
   try {
     const token = await getAccessToken();
@@ -103,7 +98,7 @@ export async function getArtistAlbums(artistId) {
 
     const data = await response.json();
     
-    // Remove duplicates (same album, different markets)
+    // Remove duplicates (same album, different labels)
     const uniqueAlbums = [];
     const albumNames = new Set();
     
