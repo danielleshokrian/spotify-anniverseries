@@ -1,14 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Music, Disc } from 'lucide-react';
 import SearchBar from './components/SearchBar';
 import ArtistCard from './components/ArtistCard';
 import LoadingSpinner from './components/LoadingSpinner';
 import { searchArtists } from '../services/spotifyApi';
 
+const FEATURED_ARTISTS = [
+  'Whitney Houston',
+  'Taylor Swift',
+  'The Beatles',
+  'Michael Jackson',
+  'Beyoncé',
+  'David Bowie'
+];
+
 export default function HomePage() {
   const [searchResults, setSearchResults] = useState([]);
+  const [featuredArtists, setFeaturedArtists] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [featuredLoading, setFeaturedLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadFeaturedArtists = async () => {
+      setFeaturedLoading(true);
+      try {
+        const promises = FEATURED_ARTISTS.map(name => searchArtists(name));
+        const results = await Promise.all(promises);
+        
+        const artists = results.map(result => result[0]).filter(Boolean);
+        setFeaturedArtists(artists);
+      } catch (err) {
+        console.error('Error loading featured artists:', err);
+      } finally {
+        setFeaturedLoading(false);
+      }
+    };
+
+    loadFeaturedArtists();
+  }, []);
 
   const handleSearch = async (query) => {
     if (!query.trim()) return;
@@ -80,6 +110,25 @@ export default function HomePage() {
               <ArtistCard key={artist.id} artist={artist} />
             ))}
           </div>
+        </div>
+      )}
+      {/* Featured Artists - Only show if no search results */}
+      {!loading && searchResults.length === 0 && (
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+            <Music className="w-8 h-8 text-cyan-400" />
+            Featured Artists
+          </h2>
+          
+          {featuredLoading ? (
+            <LoadingSpinner message="Loading featured artists..." />
+          ) : (
+            <div className="grid gap-4">
+              {featuredArtists.map((artist) => (
+                <ArtistCard key={artist.id} artist={artist} />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
