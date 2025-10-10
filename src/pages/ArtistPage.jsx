@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ArtistHeader from './components/ArtistHeader';
-import AnniversaryFilter from './components/AnniversaryFilter';
-import AlbumGrid from './components/AlbumGrid';
-import LoadingSpinner from './components/LoadingSpinner';
+import ArtistHeader from '../components/artist/ArtistHeader';
+import AnniversaryFilter from '../components/artist/AnniversaryFilter';
+import AlbumGrid from '../components/album/AlbumGrid';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 import { getArtist, getArtistAlbums } from '../services/spotifyApi';
 
 export default function ArtistPage() {

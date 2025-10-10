@@ -1,7 +1,7 @@
 import React from 'react';
 import { Disc3 } from 'lucide-react';
 import AlbumCard from './AlbumCard';
-import EmptyState from './EmptyState';
+import EmptyState from '../common/EmptyState';
 
 export default function AlbumGrid({ albums, filterEnabled }) {
   return (

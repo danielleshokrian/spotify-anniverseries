@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Music, Disc } from 'lucide-react';
-import SearchBar from './components/SearchBar';
-import ArtistCard from './components/ArtistCard';
-import LoadingSpinner from './components/LoadingSpinner';
+import SearchBar from '../components/search/SearchBar';
+import ArtistCard from '../components/search/ArtistCard';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 import { searchArtists } from '../services/spotifyApi';
 
 const FEATURED_ARTISTS = [
