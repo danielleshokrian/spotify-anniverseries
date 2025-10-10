@@ -42,27 +42,39 @@ export default function AnniversaryFilter({
 
         {/* Target Year */}
         <div>
-          <label className="block text-cyan-400 mb-2 text-sm font-bold uppercase tracking-wide">
+          <label className={`block mb-2 text-sm font-bold uppercase tracking-wide transition-colors ${
+            filterEnabled ? 'text-cyan-400' : 'text-gray-600'
+          }`}>
             Target Year
           </label>
           <input
             type="number"
             value={targetYear}
             onChange={(e) => setTargetYear(parseInt(e.target.value))}
-            className="w-full px-4 py-2.5 rounded-lg bg-gray-900 text-white border-2 border-pink-500/30 focus:outline-none focus:border-cyan-500 focus:shadow-[0_0_15px_rgba(0,217,255,0.5)] transition-all font-mono"
+            className={`w-full px-4 py-2.5 rounded-lg text-white border-2 font-mono transition-all ${
+              filterEnabled 
+                ? 'bg-gray-900 border-pink-500/30 focus:outline-none focus:border-cyan-500 focus:shadow-[0_0_15px_rgba(0,217,255,0.5)]' 
+                : 'bg-gray-800 border-gray-700 cursor-not-allowed opacity-50'
+            }`}
             disabled={!filterEnabled}
           />
         </div>
 
         {/* Increment */}
         <div>
-          <label className="block text-cyan-400 mb-2 text-sm font-bold uppercase tracking-wide">
+          <label className={`block mb-2 text-sm font-bold uppercase tracking-wide transition-colors ${
+            filterEnabled ? 'text-cyan-400' : 'text-gray-600'
+          }`}>
             Anniversary Increment
           </label>
           <select
             value={increment}
             onChange={(e) => setIncrement(parseInt(e.target.value))}
-            className="w-full px-4 py-2.5 rounded-lg bg-gray-900 text-white border-2 border-pink-500/30 focus:outline-none focus:border-cyan-500 focus:shadow-[0_0_15px_rgba(0,217,255,0.5)] transition-all font-mono cursor-pointer"
+            className={`w-full px-4 py-2.5 rounded-lg text-white border-2 font-mono transition-all ${
+              filterEnabled 
+                ? 'bg-gray-900 border-pink-500/30 focus:outline-none focus:border-cyan-500 focus:shadow-[0_0_15px_rgba(0,217,255,0.5)] cursor-pointer' 
+                : 'bg-gray-800 border-gray-700 cursor-not-allowed opacity-50'
+            }`}
             disabled={!filterEnabled}
           >
             <option value={5}>Every 5 years</option>
