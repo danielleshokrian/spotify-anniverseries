@@ -1,4 +1,6 @@
-// Spotify API Configuration
+const API_BASE_URL = 'https://api.spotify.com/v1';
+const AUTH_URL = 'https://accounts.spotify.com/api/token';
+
 const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 
@@ -10,7 +12,7 @@ async function getAccessToken() {
     return accessToken;
   }
 
-  const response = await fetch('https://accounts.spotify.com/api/token', {
+  const response = await fetch(AUTH_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -35,7 +37,7 @@ export async function searchArtists(query) {
     const token = await getAccessToken();
     
     const response = await fetch(
-      `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=artist&limit=10`,
+      `${API_BASE_URL}/search?q=${encodeURIComponent(query)}&type=artist&limit=10`,
       {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -60,7 +62,7 @@ export async function getArtist(artistId) {
     const token = await getAccessToken();
     
     const response = await fetch(
-      `https://api.spotify.com/v1/artists/${artistId}`,
+      `${API_BASE_URL}/artists/${artistId}`,
       {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -84,7 +86,7 @@ export async function getArtistAlbums(artistId) {
     const token = await getAccessToken();
     
     const response = await fetch(
-      `https://api.spotify.com/v1/artists/${artistId}/albums?include_groups=album&market=US&limit=50`,
+      `${API_BASE_URL}/artists/${artistId}/albums?include_groups=album&market=US&limit=50`,
       {
         headers: {
           'Authorization': `Bearer ${token}`
