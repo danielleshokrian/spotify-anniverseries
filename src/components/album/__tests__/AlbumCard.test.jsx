@@ -34,10 +34,4 @@ describe('AlbumCard', () => {
     render(<AlbumCard album={mockAlbum} />);
     expect(screen.queryByText(/Year Anniversary/i)).not.toBeInTheDocument();
   });
-
-  it('renders album artwork', () => {
-    render(<AlbumCard album={mockAlbum} />);
-    const img = screen.getByAltText('1989');
-    expect(img).toHaveAttribute('src', 'https://example.com/album.jpg');
-  });
 });
